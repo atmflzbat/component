@@ -11,7 +11,8 @@
 ## 常规使用
 
 - 引用地址：
-`../../base/canvas.js`
+[《操作指南》](../../base/canvas.js)
+`../../base/canvas.js`(../demos/README.md#rest-api)
 https://css.jj.cn/js/jjmatch/utf8/base/canvas.js
 https://css.jj.cn/js/jjmatch/utf8/base/scratch_award.js
 - 该模块（外部接口统一挂载在window.fengluzhe.scratch_award）只提供了scratch_award方法供调用，传入必要参数就可以运行（详细API如下）
@@ -52,9 +53,6 @@ scratch_award方法：
         }
     });
 ```
-
-
-打开`demos/rest-api-demo`，按照[《操作指南》](../demos/README.md#rest-api)，熟悉 REST API 的基本用法。
 
 
 ![](./images/ok.png)
