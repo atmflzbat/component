@@ -11,6 +11,7 @@
 ## 常规使用
 
 - 引用地址：
+
 [canvas.js](../../base/canvas.js)
 
 [scratch_award.js](../../base/scratch_award.js)
