@@ -54,4 +54,4 @@ scratch_award方法：
 ```
 
 
-![image](../images/ok.png)
+![image](../images/ok.jpg)
