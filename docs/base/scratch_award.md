@@ -12,9 +12,9 @@
 
 - 引用地址：
 
-[canvas.js](../../base/canvas.js)
+   [canvas.js](../../base/canvas.js)
 
-[scratch_award.js](../../base/scratch_award.js)
+   [scratch_award.js](../../base/scratch_award.js)
 - 该模块（外部接口统一挂载在window.fengluzhe.scratch_award）只提供了scratch_award方法供调用，传入必要参数就可以运行（详细API如下）
 
 ---
