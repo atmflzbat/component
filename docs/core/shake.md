@@ -50,9 +50,10 @@ window.fengluzhe.shake.init({
 - @return {string}本次配置摇一摇的名字
 
 ### stop方法：
-
-- @param {string} name 将要关闭摇一摇的名字
-- @param {string} “all” 关闭本页面配置的所有摇一摇功能
+```javascript
+@param {string} name 将要关闭摇一摇的名字
+@param {string} “all” 关闭本页面配置的所有摇一摇功能
+```
 ```javascript
 var shake = window.fengluzhe.shake;
    shake.init({
