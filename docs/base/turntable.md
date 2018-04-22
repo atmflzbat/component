@@ -12,9 +12,9 @@
 
 - 引用地址：
 
-   [turntable.js](../../base/turntable.js)
+   [event.js](../../core/event.js)
 
-   [scratch_award.js](../../base/scratch_award.js)
+   [turntable.js](../../base/turntable.js)
 - 该模块（外部接口统一挂载在window.fengluzhe.turntable）只提供了一个方法供调用，传入必要参数就可以运行（详细API如下）
 
 ---
@@ -41,20 +41,22 @@ window.fengluzhe.turntable({
 该模块提供API如下:
 turntable：转盘主方法
 ## API详细说明
-统一说明如下：
+### 统一说明如下：
 
-参数都是按照传入顺序说明
-(*) 开头的为必填参数
-@param是参数的意思
-turntable方法：
+- 参数都是按照传入顺序说明
+- (*) 开头的为必填参数
+- @param是参数的意思
 
-@param {object} pointer 启动转盘dom对象
-@param {object} turntable 转盘dom对象
-@param {Boolean} is_pointer 转盘是否是指针自身（可选）
-@param {Number} awards_num 转盘奖品种类总数
-@param {function} end_fn 转盘抽奖完毕回调函数
-@param {function} click_fn 点击按钮请求中奖数据函数
-@param {function} zero_fn 抽奖次数为0的回调函数
+### turntable方法：
+
+- @param {object} pointer 启动转盘dom对象
+- @param {object} turntable 转盘dom对象
+- @param {Boolean} is_pointer 转盘是否是指针自身（可选）
+- @param {Number} awards_num 转盘奖品种类总数
+- @param {function} end_fn 转盘抽奖完毕回调函数
+- @param {function} click_fn 点击按钮请求中奖数据函数
+- @param {function} zero_fn 抽奖次数为0的回调函数
+
 ---
 ```javascript
     fengluzhe.scratch_award({
