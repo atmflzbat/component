@@ -12,7 +12,7 @@
 
 - 引用地址：[frame_animation.js](../../base/frame_animation.js)
 
-- 该模块（外部接口统一挂载在window.jjmatch.shake）只提供了canvas、css3、stop三个方法供调用，传入必要参数就可以运行（详细API如下）
+- 该模块（外部接口统一挂载在window.fengluzhe.shake）只提供了canvas、css3、stop三个方法供调用，传入必要参数就可以运行（详细API如下）
 
 ---
 
@@ -38,7 +38,7 @@
 - @param {Number} time 动画执行一次所需要的时间
 ---
 ```javascript
-window.jjmatch.frame_animation.canvas({
+window.fengluzhe.frame_animation.canvas({
     show_dom : dom,
     width: 300,
     height: 600,
@@ -67,7 +67,7 @@ window.jjmatch.frame_animation.canvas({
 - @param {Number} time 动画执行一次所需要的时间
 ---
 ```javascript
-window.jjmatch.frame_animation.css3({
+window.fengluzhe.frame_animation.css3({
     show_dom : dom,
     time: 1200,
     loop: true,
@@ -89,7 +89,7 @@ window.jjmatch.frame_animation.css3({
 - @param {String} render 帧动画的生成方式（必填）
 ---
 ```javascript
-window.jjmatch.frame_animation.stop({
+window.fengluzhe.frame_animation.stop({
     show_dom : dom,
     render: "canvas"
 });
