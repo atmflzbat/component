@@ -83,7 +83,7 @@ var data = {
     no: "iAmiD",//活动id
     open: {
         open_id: 'open1',//抽奖任务的id号
-        url: '//mob.my.jj.cn/api/activity/2017bnhb.php', //抽奖活动对应的接口
+        url: '//xxx.xx.cn/api/activity/company.php', //抽奖活动对应的接口
     },
     task_list: [],
     success: function(data) {
@@ -97,10 +97,10 @@ var data = {
         }
     }
 };
-if (window.jjmatch.prize.init(data,"test1") === false) {
+if (window.fengluzhe.prize.init(data,"test1") === false) {
     console.error('初始化时失败');
 }
-window.jjmatch.turntable({
+window.fengluzhe.turntable({
     pointer : lottery_btn,
     turntable : lottery_panel,
     is_pointer : true,
@@ -110,7 +110,7 @@ window.jjmatch.turntable({
     click_fn: function (obj) {
         //开始旋转回调 对象参数 通过变量click_fn_obj传递给prize组件的成功回调处理
         click_fn_obj = obj;
-        window.jjmatch.prize.open("test1");
+        window.fengluzhe.prize.open("test1");
     },
     end_fn: function(obj){
         console.log(obj);
