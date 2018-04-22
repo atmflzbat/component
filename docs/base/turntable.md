@@ -38,7 +38,8 @@ window.fengluzhe.turntable({
 });
 ```
 ## API概览
-该模块提供API如下:
+该模块提供API如下：
+
 turntable：转盘主方法
 ## API详细说明
 ### 统一说明如下：
