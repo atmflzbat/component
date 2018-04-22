@@ -1,0 +1,160 @@
+<style type="text/css">
+    em{font-style: normal;font-weight: bolder;}
+    i{font-style: normal;}
+    h4{font-weight: normal;}
+    h2{margin-top: 56px; font-weight: bolder;}
+    pre{background: #2B2B2B;color: #A9B7C6;font-size: 20px !important;padding: 8px;border-radius: 3px;}
+    pre span{color:#A5C261;}
+    img{display: block;margin-top: 19px;}
+    .code{background: #2B2B2B;padding: 8px;font-size: 14px;border-radius: 3px;border: none;}
+    .cent{width:100%;text-align: center;}
+    .yellow{color: #D9B464;}
+    .white{color: #BABABA;}
+    .blue{color: #6897BB;}
+    .green{color: #A5C261;}
+    .red{color: #CC7832;}</style>
+<h1 class="cent">
+    JJmatch框架turntable模块使用说明</h1>
+<p style="text-align: right;">
+    &mdash; 网站部：冯鲁哲</p>
+<h2>
+    模块依赖</h2>
+<p>
+    该模块不依赖任何其他模块</p>
+<h2>
+    使用方法</h2>
+<p>
+    需要注意，目前所有模块都有gbk和utf8两种编码格式的文件（包括requirejs本身），具体依据路径判断，根据编码场景自己选择</p>
+<h3>
+    require使用</h3>
+<pre style="font-family: Consolas; font-size: 12pt;">
+<span style="color:#808080;">//</span><span style="color:#808080;font-family:'宋体';">配置</span><span style="color:#808080;">require
+</span>require.config({
+    <span style="color:#9876aa;">shim</span>: {
+        <span style="color:#9876aa;">turntable</span>: {
+            <span style="color:#9876aa;">exports</span>: <span style="color:#6a8759;">&#39;jjmatch.turntable&#39;</span><span style="color:#cc7832;">,
+</span><span style="color:#cc7832;">            </span><span style="color:#9876aa;">deps</span>: [<span style="color:#6a8759;">&#39;event&#39;</span>]
+        }<span style="color:#cc7832;">,
+</span><span style="color:#cc7832;">        </span><span style="color:#9876aa;">event</span>: {
+            <span style="color:#9876aa;">exports</span>: <span style="color:#6a8759;">&#39;jjmatch.event&#39;
+</span><span style="color:#6a8759;">        </span>}
+    }<span style="color:#cc7832;">,
+</span><span style="color:#cc7832;">    </span><span style="color:#9876aa;">paths</span>: {
+        <span style="color:#9876aa;">turntable</span>: <span style="color:#6a8759;">&#39;https://css.jj.cn/js/jjmatch/utf8/base/lottery_turntable&#39;</span><span style="color:#cc7832;">,
+</span><span style="color:#cc7832;">        </span><span style="color:#9876aa;">event</span>: <span style="color:#6a8759;">&#39;https://css.jj.cn/js/jjmatch/utf8/core/event&#39;
+</span><span style="color:#6a8759;">    </span>}
+})<span style="color:#cc7832;">;
+</span><span style="color:#808080;">//</span><span style="color:#808080;font-family:'宋体';">调用
+</span>require([<span style="color:#6a8759;">&#39;turntable&#39;</span>]<span style="color:#cc7832;">,</span><span style="color:#cc7832;font-weight:bold;">function</span>(turntable){
+    <span style="color:#808080;">//your code here
+</span>}<span style="color:#cc7832;">;</span></pre>
+<h3>
+    常规使用</h3>
+<ul>
+    <li>
+        引用地址：https://css.jj.cn/js/jjmatch/utf8/base/turntable.js</li>
+    <li>
+        该模块（外部接口统一挂载在window.jjmatch.turntable）只提供了一个方法供调用，传入必要参数就可以运行（详细API如下）</li>
+</ul>
+<h2>
+    调用说明</h2>
+<pre style="font-family: Consolas; font-size: 12pt;">
+<span style="background-color:#344134;">window</span>.<span style="color:#9876aa;">jjmatch</span>.<span style="color:#ffc66d;">turntable</span>({
+    <span style="color:#9876aa;">pointer </span>: lottery_btn<span style="color:#cc7832;">,
+</span><span style="color:#cc7832;">    </span><span style="color:#9876aa;">turntable </span>: lottery_panel<span style="color:#cc7832;">,
+</span><span style="color:#cc7832;">    </span><span style="color:#9876aa;">is_pointer </span>: <span style="color:#cc7832;font-weight:bold;">true</span><span style="color:#cc7832;">,
+</span><span style="color:#cc7832;">    </span><span style="color:#9876aa;">awards_num </span>: <span style="color:#6897bb;">5</span><span style="color:#cc7832;">,
+</span><span style="color:#cc7832;">    </span><span style="color:#ffc66d;">click_fn</span>: <span style="color:#cc7832;font-weight:bold;">function </span>(obj) {
+        obj.end(data)<span style="color:#cc7832;">;
+</span><span style="color:#cc7832;">    </span>}<span style="color:#cc7832;">,
+</span><span style="color:#cc7832;">    </span><span style="color:#ffc66d;">end_fn</span>: <span style="color:#cc7832;font-weight:bold;">function</span>(obj){
+        <span style="color:#9876aa;">console</span>.<span style="color:#ffc66d;">log</span>(obj)<span style="color:#cc7832;">;
+</span><span style="color:#cc7832;">    </span>}
+})<span style="color:#cc7832;">;</span></pre>
+<h3>
+    API概览</h3>
+<p>
+    该模块提供API如下:</p>
+<ul>
+    <li>
+        turntable：<em>转盘主方法</em></li>
+</ul>
+<h3>
+    API详细说明</h3>
+<p>
+    统一说明如下：</p>
+<ul>
+    <li>
+        参数都是按照传入顺序说明</li>
+    <li>
+        * 开头的为必填参数</li>
+    <li>
+        @param是参数的意思</li>
+</ul>
+<p>
+    turntable方法：</p>
+<ul>
+    <li>
+        @param {object} pointer 启动转盘dom对象</li>
+    <li>
+        @param {object} turntable 转盘dom对象</li>
+    <li>
+        @param {Boolean} is_pointer 转盘是否是指针自身（可选）</li>
+    <li>
+        @param {Number} awards_num 转盘奖品种类总数</li>
+    <li>
+        @param {object} end_fn 转盘抽奖完毕回调函数</li>
+    <li>
+        @param {object} click_fn 点击按钮请求中奖数据函数</li>
+</ul>
+<h2>
+    抽奖prize组件</h2>
+<ul>
+    <li>
+        prize地址：https://css.jj.cn/js/jjmatch/utf8/common/prize.js</li>
+    <li>
+        开始旋转回调函数由prize组件提供</li>
+</ul>
+<pre style="font-family: Consolas; font-size: 12pt;">
+<span style="color:#cc7832;font-weight:bold;">var </span>click_fn_obj<span style="color:#cc7832;">;
+</span><span style="color:#cc7832;font-weight:bold;">var </span>data = {
+    <span style="color:#9876aa;">no</span>: active_id<span style="color:#cc7832;">,</span><span style="color:#808080;">//</span><span style="color:#808080;font-family:'宋体';">活动</span><span style="color:#808080;">id
+</span><span style="color:#808080;">    </span><span style="color:#9876aa;">open</span>: {
+        <span style="color:#9876aa;">open_id</span>: <span style="color:#6a8759;">&#39;11111&#39;</span><span style="color:#cc7832;">,</span><span style="color:#808080;">//</span><span style="color:#808080;font-family:'宋体';">抽奖任务的</span><span style="color:#808080;">id</span><span style="color:#808080;font-family:'宋体';">号
+</span><span style="color:#808080;font-family:'宋体';">        </span><span style="color:#9876aa;">url</span>: <span style="color:#6a8759;">&#39;//mob.my.jj.cn/api/activity/2017bnhb.php&#39;</span><span style="color:#cc7832;">, </span><span style="color:#808080;">//</span><span style="color:#808080;font-family:'宋体';">抽奖活动对应的接口
+</span><span style="color:#808080;font-family:'宋体';">    </span>}<span style="color:#cc7832;">,
+</span><span style="color:#cc7832;">    </span><span style="color:#9876aa;">task_list</span>: []<span style="color:#cc7832;">,
+</span><span style="color:#cc7832;">    </span><span style="color:#ffc66d;">success</span>: <span style="color:#cc7832;font-weight:bold;">function</span>(data) {
+        <span style="color:#cc7832;font-weight:bold;">if </span>(data.<span style="color:#9876aa;">TASK_ID </span>=== <span style="color:#6a8759;">&#39;11111&#39;</span>) {
+            click_fn_obj.end({
+                <span style="color:#9876aa;">data</span>:data
+            })<span style="color:#cc7832;">;
+</span><span style="color:#cc7832;">        </span>}
+    }<span style="color:#cc7832;">,
+</span><span style="color:#cc7832;">    </span><span style="color:#ffc66d;">error</span>: <span style="color:#cc7832;font-weight:bold;">function</span>(data) {
+        <span style="color:#cc7832;font-weight:bold;">if </span>(data.<span style="color:#9876aa;">TASK_ID </span>=== <span style="color:#6a8759;">&#39;11111&#39;</span>) {
+            click_fn_obj.end({
+                <span style="color:#9876aa;">data</span>:data
+            })<span style="color:#cc7832;">;
+</span><span style="color:#cc7832;">        </span>}
+    }
+}<span style="color:#cc7832;">;
+</span><span style="color:#cc7832;font-weight:bold;">if </span>(window.<span style="color:#9876aa;">jjmatch</span>.<span style="color:#9876aa;">prize</span>.<span style="color:#ffc66d;">init</span>(data<span style="color:#cc7832;">,</span><span style="color:#6a8759;">&quot;test1&quot;</span>) === <span style="color:#cc7832;font-weight:bold;">false</span>) {
+    <span style="color:#9876aa;">console</span>.error(<span style="color:#6a8759;">&#39;</span><span style="color:#6a8759;font-family:'宋体';">初始化时失败</span><span style="color:#6a8759;">&#39;</span>)<span style="color:#cc7832;">;
+</span>}
+
+
+window.<span style="color:#9876aa;">jjmatch</span>.<span style="color:#ffc66d;">turntable</span>({
+    <span style="color:#9876aa;">pointer </span>: lottery_btn<span style="color:#cc7832;">,
+</span><span style="color:#cc7832;">    </span><span style="color:#9876aa;">turntable </span>: lottery_panel<span style="color:#cc7832;">,
+</span><span style="color:#cc7832;">    </span><span style="color:#9876aa;">is_pointer </span>: <span style="color:#cc7832;font-weight:bold;">true</span><span style="color:#cc7832;">,
+</span><span style="color:#cc7832;">    </span><span style="color:#9876aa;">awards_num </span>: <span style="color:#6897bb;">5</span><span style="color:#cc7832;">,
+</span><span style="color:#cc7832;">    </span><span style="color:#ffc66d;">click_fn</span>: <span style="color:#cc7832;font-weight:bold;">function </span>(obj) {
+        <span style="color:#808080;">//</span><span style="color:#808080;font-family:'宋体';">开始旋转回调 对象参数 通过变量</span><span style="color:#808080;">click_fn_obj</span><span style="color:#808080;font-family:'宋体';">传递给</span><span style="color:#808080;">prize</span><span style="color:#808080;font-family:'宋体';">组件的成功回调处理
+</span><span style="color:#808080;font-family:'宋体';">        </span>click_fn_obj = obj<span style="color:#cc7832;">;
+</span><span style="color:#cc7832;">        </span>prize.open(<span style="color:#6a8759;">&quot;test1&quot;</span>)<span style="color:#cc7832;">;
+</span><span style="color:#cc7832;">    </span>}<span style="color:#cc7832;">,
+</span><span style="color:#cc7832;">    </span><span style="color:#ffc66d;">end_fn</span>: <span style="color:#cc7832;font-weight:bold;">function</span>(obj){
+        <span style="color:#9876aa;">console</span>.<span style="color:#ffc66d;">log</span>(obj)<span style="color:#cc7832;">;
+</span><span style="color:#cc7832;">    </span>}
+})<span style="color:#cc7832;">;</span></pre>
