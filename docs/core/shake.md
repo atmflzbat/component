@@ -60,7 +60,7 @@ var shake = window.fengluzhe.shake;
       orientation: "left_right",
       threshold: 6,
       timeout: 800,
-    * callback: function(name){
+      callback: function(name){
          shake.stop(name);
       }
    });
@@ -68,7 +68,7 @@ var return_name = shake.init({
       orientation: "front_end",
       threshold: 12,
       timeout: 1000,
-    * callback: function(name){
+      callback: function(name){
          shake.stop(name);
       }
    });
