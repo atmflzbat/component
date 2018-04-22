@@ -39,6 +39,7 @@ window.fengluzhe.shake.init({
 - (*)开头的为必填参数
 - @param是参数的意思
 - @return方法的返回值
+
 ###init方法：
 
 - @param {string} name 标识独立的每一次摇一摇（可选）
@@ -47,6 +48,7 @@ window.fengluzhe.shake.init({
 - @param {Number} timeout 持续时间阈值（可选）
 - @param {function} callback 摇一摇事件触发的处理函数，参数为本次配置摇一摇的名字（必填）
 - @return {string}本次配置摇一摇的名字
+
 ###stop方法：
 
 - @param {string} name 将要关闭摇一摇的名字
