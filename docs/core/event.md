@@ -11,8 +11,8 @@
 ## 常规使用
 
 - 引用地址：[event.js](../../core/event.js)
-- 该模块是对addEventListener的兼容配置，只有addEventListene上支持的事件，本模块才适用。兼容所有浏览器，包括IE5，请放心使用
-- 该模块（外部接口统一挂载在window.fengluzhe.event下）只提供了一系列方法供调用，各个方法传入必要参数就可以运行（详细API如下）
+- 该模块是对addEventListener的兼容配置，兼容所有浏览器，包括IE5，请放心使用
+- 该模块（外部接口统一挂载在window.fengluzhe.event下）提供了一系列方法供调用，各个方法传入必要参数就可以运行（详细API如下）
 
 ---
 
